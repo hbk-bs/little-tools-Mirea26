@@ -5,6 +5,8 @@ console.log(colorInput);
 let paintColor = "#ff6347";
 colorInput.value = paintColor;
 
+let sliderValue = 1;
+
 function setup() {
     const canvas = createCanvas(200,200);
     canvas.parent = ('sketch');
@@ -17,6 +19,13 @@ function setup() {
       console.log(colorInput.value);
       paintColor = colorInput.value;
     })
+   slider = createSlider(0, 255, sliderValue);
+   slider.position (860,100);
+   slider.size(400);
+
+   slider.input(function(){
+    sliderValue = this.value();
+   });
 }
 
 function draw() {
@@ -25,13 +34,17 @@ function draw() {
 
 function mouseDragged() {
     fill(paintColor);
-    circle(mouseX, mouseY, 10);
+    noStroke();
+    circle(mouseX, mouseY, 20)
     line(pmouseX, pmouseY, mouseX, mouseY);
-    for(let i=0; i<100; i++) {
-        point(
-            mouseX + random(-10,10),
-            mouseY + random(-10,10)
-        );
+}
+
+function mouseDragged() {
+    stroke(paintColor);
+    strokeWeight(sliderValue);
+    line (pmouseX, pmouseY, mouseX, mouseY);
+    for (let i = 0; i<100; i++){
+        
     }
 }
 
