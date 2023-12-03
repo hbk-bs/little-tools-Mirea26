@@ -1,6 +1,7 @@
 const saveButton = document.querySelector ('button#save');
 const colorInput = document.querySelector ('input#color');
 console.log(colorInput);
+const rectButton = document.querySelector ('button#rect');
 
 let paintColor = "#ff6347";
 colorInput.value = paintColor;
@@ -18,6 +19,10 @@ function setup() {
     colorInput.addEventListener("input",()=>{
       console.log(colorInput.value);
       paintColor = colorInput.value;
+    })
+    rectButton.addEventListener("click",()=>{
+        console.log('clicked');
+        rect('rect');
     })
    slider = createSlider(0, 255, sliderValue);
    slider.position (860,100);
@@ -37,15 +42,18 @@ function mouseDragged() {
     noStroke();
     circle(mouseX, mouseY, 20)
     line(pmouseX, pmouseY, mouseX, mouseY);
-}
 
-function mouseDragged() {
     stroke(paintColor);
     strokeWeight(sliderValue);
     line (pmouseX, pmouseY, mouseX, mouseY);
     for (let i = 0; i<100; i++){
         
     }
+}
+
+function mouseClicked(rectButton) {
+    fill(paintColor);
+    rect(mouseX, mouseY, 10, 10);
 }
 
 function keyPressed(){
