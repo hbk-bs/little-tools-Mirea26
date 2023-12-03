@@ -7,6 +7,7 @@ let paintColor = "#ff6347";
 colorInput.value = paintColor;
 
 let sliderValue = 1;
+const rect = rect(random(width), random(height), 10, 10);
 
 function setup() {
     const canvas = createCanvas(200,200);
