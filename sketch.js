@@ -19,7 +19,7 @@ const drawType = ['rectangle', 'circle'];
 let drawSelectedIndex = 0;
 function setup() {
   const canvas = createCanvas(200, 200);
-  canvas.parent = 'sketch';
+  canvas.parent('sketch');
   background(255);
   saveButton.addEventListener('click', () => {
     console.log('clicked');
