@@ -13,8 +13,10 @@
       <aside>
         <input type="color" name="color" id="color">
         <button id="save">save</button>
-        <input type="slider" name="slider" id="slider">
-        <button id="rect">rect</button>
+        <!-- I added some basic attributes for your slider type is range not slider -->
+        <input max="100" min="10" step="5" value="10" type="range" name="slider" id="slider">
+        <button id="rect">rectangle/circle</button>
+        <button id="triangle">triangle/ellipse</button> 
       </aside>
       <main>
         <div id="sketch"></div>
